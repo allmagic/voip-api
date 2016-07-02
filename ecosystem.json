@@ -18,7 +18,7 @@
       }],
       "ref"  : "origin/master",
       "repo" : "git@github.com:allmagic/voip-api.git",
-      "path" : "/root/deployment/production",
+      "path" : "/root/deployment",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production",
       "env"  : {
         "NODE_ENV": "production"
