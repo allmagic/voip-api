@@ -34,6 +34,10 @@ function handleVoIP(req, res, next) {
 
 server.use(restify.queryParser()); // Dung de parse query
 
+server.get('/new', function(req, res, next){
+  res.json(200, {"msg": "done"});
+  next();
+});
 server.get('/incoming', handleVoIP);
 server.post('/incoming', handleVoIP);
 
