@@ -1,6 +1,14 @@
 var restify = require('restify');
 var socketio = require('socket.io');
 
+// Socket Server
+// Những code kiểu require(xxx) toàn trên server thôi
+// Syntax là js nhưng phải chạy bằng node xxx
+
+// gio vi du export set SOCKET_PORT trong env
+var SOCKET_PORT = process.env.SOCKET_PORT || 3001; //cau nay lay env SOCKET_PORT neu khong co default la 3001
+console.log('SOCKET_PORT', SOCKET_PORT);
+
 var server = restify.createServer();
 var io = socketio.listen(server.server);
 
@@ -29,7 +37,7 @@ server.use(restify.queryParser()); // Dung de parse query
 server.get('/incoming', handleVoIP);
 server.post('/incoming', handleVoIP);
 
-server.listen(3001, function() {
+server.listen(SOCKET_PORT, function() {
   console.log('Calling API %s listening at %s', server.name, server.url);
 });
 
