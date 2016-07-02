@@ -13,7 +13,9 @@
   "deploy" : {
     "production" : {
       "user" : "root",
-      "host" : ["vnmagic.net -p 2222"],
+      "host" : [{
+        "host": "vnmagic.net -p 2222",
+      }],
       "ref"  : "origin/master",
       "repo" : "git@github.com:allmagic/voip-api.git",
       "path" : "/root/deployment/production",
